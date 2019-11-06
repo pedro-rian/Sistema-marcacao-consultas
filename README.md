@@ -33,4 +33,3 @@ O USUÁRIO poderá:
     - Solicitar agendamento de consulta informando o dia e turno de preferência;
     - Visualizar consultas agendas;
     - Visualizar resultado de uma consulta;
-  --------------------------------------------------------------------------------------------------------------------------------------
