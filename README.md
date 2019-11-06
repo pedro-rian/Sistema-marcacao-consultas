@@ -30,7 +30,7 @@ O MÉDICO poderá:
     - A clínica funciona de segunda a sexta-feira das 7h às 12h e das 13h às 18h;
 
 O USUÁRIO poderá:
-  - Solicitar agendamento de consulta informando o dia e turno de preferência;
-  - Visualizar consultas agendas;
-  - Visualizar resultado de uma consulta;
+    - Solicitar agendamento de consulta informando o dia e turno de preferência;
+    - Visualizar consultas agendas;
+    - Visualizar resultado de uma consulta;
   --------------------------------------------------------------------------------------------------------------------------------------
