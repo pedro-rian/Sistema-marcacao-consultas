@@ -11,9 +11,10 @@ PROFESSOR/ORIENTADOR:
 - Antonio Higor Freire de Morais
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Este sistema, desenvolvido em linguagem de programação Java, será responsável por controlar o acesso de 3 perfis de usuários a um sistema de marcação de consultas para agências de saúde. Sendo estes perfis, respectivamente: Administrador, médico e paciente.
+Este sistema, desenvolvido em linguagem de programação Java, será responsável por controlar o acesso de 3 perfis de usuários a um sistema de marcação de consultas para um clínica. Sendo estes perfis, respectivamente: Administrador, médico e paciente.
 
 Neste sistema, o ADMINISTRADOR poderá:
+<br>
   Cadastrar médicos e pacientes;
   <br>
     - Médico: Nome, especialidade e telefone;
