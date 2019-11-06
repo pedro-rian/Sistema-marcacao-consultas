@@ -28,13 +28,20 @@ Neste sistema, o ADMINISTRADOR poderá:
     <br>
     - Visualizar disponibilidade de horários para atendimento dos médicos;
     <br>
+    <br>
     
 O MÉDICO poderá:
+<br>
   Visualizar consultas;
+  <br>
   Registrar atendimento ao paciente inserindo as informações decorrentes da consulta;
-  Cadastrar agenda com disponibilidade para atendimentos;
+  <br>
+Cadastrar agenda com disponibilidade para atendimentos;
+<br>
     - Cada atendimento pode durar 30min;
+    <br>
     - A clínica funciona de segunda a sexta-feira das 7h às 12h e das 13h às 18h;
+    <br>
 
 O USUÁRIO poderá:
     - Solicitar agendamento de consulta informando o dia e turno de preferência;
