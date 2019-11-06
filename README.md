@@ -44,6 +44,9 @@ Cadastrar agenda com disponibilidade para atendimentos;
     <br>
 
 O USUÁRIO poderá:
+<br>
     - Solicitar agendamento de consulta informando o dia e turno de preferência;
+    <br>
     - Visualizar consultas agendas;
+    <br>
     - Visualizar resultado de uma consulta;
