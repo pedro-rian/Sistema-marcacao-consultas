@@ -15,6 +15,7 @@ Este sistema, desenvolvido em linguagem de programação Java, será responsáve
 
 Neste sistema, o ADMINISTRADOR poderá:
   Cadastrar médicos e pacientes;
+  <br>
     - Médico: Nome, especialidade e telefone;
     - Paciente: Nome, CPF e telefone;
   Marcar consulta de um paciente com um médico, de acordo com a disponibilidade de
