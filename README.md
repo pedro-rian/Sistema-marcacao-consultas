@@ -18,11 +18,16 @@ Neste sistema, o ADMINISTRADOR poderá:
   Cadastrar médicos e pacientes;
   <br>
     - Médico: Nome, especialidade e telefone;
+    <br>
     - Paciente: Nome, CPF e telefone;
+    <br>
   Marcar consulta de um paciente com um médico, de acordo com a disponibilidade de
   atendimento do médico;
+  <br>
     - Visualizar, editar e excluir consultas;
+    <br>
     - Visualizar disponibilidade de horários para atendimento dos médicos;
+    <br>
     
 O MÉDICO poderá:
   Visualizar consultas;
