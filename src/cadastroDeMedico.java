@@ -1,4 +1,5 @@
 
+import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 
 
@@ -23,7 +24,7 @@ public class cadastroDeMedico extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         campoNomeMedico.setDocument(new Limite_caracteres(100));
-        bancoDeDados med = new bancoDeDados();
+       
     }
 
     /**
@@ -42,16 +43,6 @@ public class cadastroDeMedico extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         campoNomeMedico = new javax.swing.JTextField();
-        clinicaMedica = new javax.swing.JRadioButton();
-        cardiologia = new javax.swing.JRadioButton();
-        neurologia = new javax.swing.JRadioButton();
-        dermatologia = new javax.swing.JRadioButton();
-        pediatria = new javax.swing.JRadioButton();
-        oftalmologia = new javax.swing.JRadioButton();
-        ginecologia = new javax.swing.JRadioButton();
-        ortopedia = new javax.swing.JRadioButton();
-        psiquiatria = new javax.swing.JRadioButton();
-        urologia = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         salvarMedico = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -60,6 +51,7 @@ public class cadastroDeMedico extends javax.swing.JDialog {
         campoSenhaMedico = new javax.swing.JPasswordField();
         checarSenhaMedico = new javax.swing.JCheckBox();
         telefoneMedico = new javax.swing.JFormattedTextField();
+        selecionarEspecialidade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -101,36 +93,6 @@ public class cadastroDeMedico extends javax.swing.JDialog {
             }
         });
 
-        buttonGroup1.add(clinicaMedica);
-        clinicaMedica.setText("Clínica Médica");
-
-        buttonGroup1.add(cardiologia);
-        cardiologia.setText("Cardiologia");
-
-        buttonGroup1.add(neurologia);
-        neurologia.setText("Neurologia");
-
-        buttonGroup1.add(dermatologia);
-        dermatologia.setText("Dermatologia");
-
-        buttonGroup1.add(pediatria);
-        pediatria.setText("Pediatria");
-
-        buttonGroup1.add(oftalmologia);
-        oftalmologia.setText("Oftalmologia");
-
-        buttonGroup1.add(ginecologia);
-        ginecologia.setText("Ginecologia");
-
-        buttonGroup1.add(ortopedia);
-        ortopedia.setText("Ortopedia");
-
-        buttonGroup1.add(psiquiatria);
-        psiquiatria.setText("Psiquiatria");
-
-        buttonGroup1.add(urologia);
-        urologia.setText("Urologia");
-
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText("TELEFONE:");
 
@@ -170,52 +132,47 @@ public class cadastroDeMedico extends javax.swing.JDialog {
             ex.printStackTrace();
         }
 
+        selecionarEspecialidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma especialidade", "Cardiologia", "Clínica Médica", "Dermatologia", "Ginecologia", "Neurologia", "Oftalmologia", "Ortopedia", "Pediatria", "Psiquiatria", "Urologia" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoNomeMedico)
-                    .addComponent(campoUsuarioMedico)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoSenhaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(checarSenhaMedico))
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(telefoneMedico)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(salvarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(selecionarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
+                            .addComponent(campoNomeMedico)
+                            .addComponent(campoUsuarioMedico)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(neurologia)
-                                    .addComponent(ortopedia)
-                                    .addComponent(dermatologia)
-                                    .addComponent(psiquiatria))
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(urologia)
-                                    .addComponent(pediatria)
-                                    .addComponent(oftalmologia)
-                                    .addComponent(ginecologia)))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cardiologia)
-                                .addGap(42, 42, 42)
-                                .addComponent(clinicaMedica))
-                            .addComponent(jLabel5))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoSenhaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(checarSenhaMedico))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(telefoneMedico)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(salvarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,43 +184,25 @@ public class cadastroDeMedico extends javax.swing.JDialog {
                 .addComponent(campoNomeMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cardiologia)
-                    .addComponent(clinicaMedica))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selecionarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ginecologia)
-                    .addComponent(dermatologia))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(neurologia)
-                    .addComponent(oftalmologia))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pediatria)
-                    .addComponent(ortopedia))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(psiquiatria)
-                    .addComponent(urologia))
-                .addGap(33, 33, 33)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoUsuarioMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoSenhaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(telefoneMedico))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(telefoneMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoSenhaMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(checarSenhaMedico)
                 .addGap(18, 18, 18)
                 .addComponent(salvarMedico)
-                .addGap(24, 24, 24))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -294,20 +233,40 @@ public class cadastroDeMedico extends javax.swing.JDialog {
             campoSenhaMedico.setEchoChar((char) 0);
         }
         else{
-            campoSenhaMedico.setEchoChar('*');
+            campoSenhaMedico.setEchoChar('•');
         }
         
     }//GEN-LAST:event_checarSenhaMedicoActionPerformed
 
     private void salvarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarMedicoActionPerformed
         
+        boolean o = TelaLogin.loginMedico.contains(campoUsuarioMedico.getText());
         String s = new String(campoSenhaMedico.getPassword());
+        String e = selecionarEspecialidade.getSelectedItem().toString();
+        
          if (campoNomeMedico.getText().trim().equals("") || campoUsuarioMedico.getText().trim().equals("") || s.trim().equals("")||
-                 telefoneMedico.getText().trim().equals("") || buttonGroup1.isSelected(null) ) {
+                 telefoneMedico.getText().trim().equals("") || selecionarEspecialidade.getSelectedItem().equals("Selecione uma especialidade") ) {
                 JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
-        } else {
+        } else if (o == true) {
              JOptionPane.showMessageDialog(this, "Médico cadastrado com sucesso!");
-         }
+        } else {
+            TelaLogin.addLoginMedico(campoUsuarioMedico.getText());
+            TelaLogin.addSenhaMedico(s);
+            TelaLogin.addNomeMedico(campoNomeMedico.getText());
+            TelaLogin.addEspecialidade(e);
+            campoNomeMedico.setText("");
+            campoSenhaMedico.setText("");
+            campoUsuarioMedico.setText("");
+            telefoneMedico.setText("");
+            selecionarEspecialidade.setSelectedItem("Selecione uma especialidade");
+            
+            JOptionPane.showMessageDialog(this, "Médico cadastrado com sucesso!");
+        }
+         
+         System.out.println(TelaLogin.nomeMedico + "\n" + TelaLogin.senhaMedico + "\n" + 
+                 TelaLogin.loginMedico + "\n" + TelaLogin.especialidadeMedico);
+         
+         
         
     }//GEN-LAST:event_salvarMedicoActionPerformed
 
@@ -358,11 +317,7 @@ public class cadastroDeMedico extends javax.swing.JDialog {
     private javax.swing.JTextField campoNomeMedico;
     private javax.swing.JPasswordField campoSenhaMedico;
     private javax.swing.JTextField campoUsuarioMedico;
-    private javax.swing.JRadioButton cardiologia;
     private javax.swing.JCheckBox checarSenhaMedico;
-    private javax.swing.JRadioButton clinicaMedica;
-    private javax.swing.JRadioButton dermatologia;
-    private javax.swing.JRadioButton ginecologia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -371,13 +326,8 @@ public class cadastroDeMedico extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton neurologia;
-    private javax.swing.JRadioButton oftalmologia;
-    private javax.swing.JRadioButton ortopedia;
-    private javax.swing.JRadioButton pediatria;
-    private javax.swing.JRadioButton psiquiatria;
     private javax.swing.JButton salvarMedico;
+    private javax.swing.JComboBox selecionarEspecialidade;
     private javax.swing.JFormattedTextField telefoneMedico;
-    private javax.swing.JRadioButton urologia;
     // End of variables declaration//GEN-END:variables
 }

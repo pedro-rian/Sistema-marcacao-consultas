@@ -4,19 +4,8 @@ import javafx.scene.control.PasswordField;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Jarci
- */
-
 public class cadastroDePaciente extends javax.swing.JDialog {
-    bancoDeDados pac = new bancoDeDados();
+
     /**
      * Creates new form cadastroDePaciente
      */
@@ -26,7 +15,7 @@ public class cadastroDePaciente extends javax.swing.JDialog {
         //jFormattedTextField1.setDocument(new Limite_digitos(11));
         campoNomePaciente.setDocument(new Limite_caracteres(100));
         //campoTelefone.setDocument(new Limite_digitos(9));
-        
+
     }
 
     /**
@@ -217,51 +206,44 @@ public class cadastroDePaciente extends javax.swing.JDialog {
     }//GEN-LAST:event_campoCpfActionPerformed
 
     private void checarSenhaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checarSenhaPacienteActionPerformed
-        if (checarSenhaPaciente.isSelected()){
+        if (checarSenhaPaciente.isSelected()) {
             campoSenhaPaciente.setEchoChar((char) 0);
-        }
-        else{
-            campoSenhaPaciente.setEchoChar('*');
+        } else {
+            campoSenhaPaciente.setEchoChar('•');
         }
 
     }//GEN-LAST:event_checarSenhaPacienteActionPerformed
 
     private void salvarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarPacienteActionPerformed
-            
-            boolean b = pac.CPFs.contains(campoCpf.getText());
-            String s = new String(campoSenhaPaciente.getPassword());
-            if (campoNomePaciente.getText().trim().equals("") || campoCpf.getText().trim().equals("") || s.trim().equals("")||campoTelefone.getText().trim().equals("") ) {
-                
-                JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
-     
+
+        boolean b = TelaLogin.CPFs.contains(campoCpf.getText());
+        String s = new String(campoSenhaPaciente.getPassword());
+        if (campoNomePaciente.getText().trim().equals("") || campoCpf.getText().trim().equals("") || s.trim().equals("") || campoTelefone.getText().trim().equals("")) {
+
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+
         } else if (b == true) {
             JOptionPane.showMessageDialog(this, "Esse CPF já está cadastrado!");
-            campoCpf.setText(""); 
-        }
-            
-            
-            
-            else{ 
-            pac.addCPF(campoCpf.getText());
-            pac.addNome(campoNomePaciente.getText());
-            pac.addSenha(s);
+            campoCpf.setText("");
+        } else {
+            TelaLogin.addCPF(campoCpf.getText());
+            TelaLogin.addSenhaPaciente(s);
+            TelaLogin.addNomePaciente(campoNomePaciente.getText());
             campoNomePaciente.setText("");
-            campoTelefone.setText(""); 
+            campoTelefone.setText("");
             campoCpf.setText("");
             campoSenhaPaciente.setText("");
-            
-            
+
             JOptionPane.showMessageDialog(this, "Paciente cadastrado com sucesso!");
-         
-            }
-            System.out.println(b + "\n" + pac.CPFs + "\n" + pac.nomePaciente + "\n" + pac.senhaPaciente);
-            
-            
-            
+
+        }
+        System.out.println(TelaLogin.nomePaciente + "\n" + TelaLogin.senhaPaciente + "\n" + TelaLogin.CPFs);
+
+
     }//GEN-LAST:event_salvarPacienteActionPerformed
 
     private void campoNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomePacienteActionPerformed
-        
+
     }//GEN-LAST:event_campoNomePacienteActionPerformed
 
     private void campoSenhaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaPacienteActionPerformed
@@ -272,7 +254,7 @@ public class cadastroDePaciente extends javax.swing.JDialog {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

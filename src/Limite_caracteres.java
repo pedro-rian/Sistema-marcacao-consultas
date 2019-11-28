@@ -19,7 +19,7 @@ throws BadLocationException{
             return;
     int totalquantia = (getLength() + str2.length());
     if (totalquantia <= quantMax){
-        super.insertString(offset2, str2.replaceAll("[^a-z|^A-Z|^ ]", ""), attr2);
+        super.insertString(offset2, str2.replaceAll("[^a-z|^A-Z|^ |^ç|^Ç|^á|^é|^í|^ó|^ú|^Á|^É|^Í|^Ó|^Ú|^â|^ê|^ô|^Â|^Ê|^Ô|^ã|^õ|^Ã|^Õ]", ""), attr2);
         return;
     }
         String nova = str2.substring(0, getLength() -quantMax);
