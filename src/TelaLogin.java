@@ -349,7 +349,7 @@ public class TelaLogin extends javax.swing.JFrame {
         } else if (entrarComo.getSelectedItem().equals("Médico")) {
             for (int i = 0; i < loginMedico.size(); i++) {
                 if (campoUsuario.getText().equals(loginMedico.get(i)) && s.equals(senhaMedico.get(i))) {
-                    medicoProvisorio m = new medicoProvisorio(this, false);
+                    interfaceMedico m = new interfaceMedico(this, false);
                     m.setVisible(true);
                     campoUsuario.setText("");
                     campoSenha.setText("");
