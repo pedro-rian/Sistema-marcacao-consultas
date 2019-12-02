@@ -36,13 +36,16 @@ public class paciente extends javax.swing.JDialog {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(662, 517));
+        setResizable(false);
 
         Painel.setBackground(new java.awt.Color(255, 255, 255));
+        Painel.setPreferredSize(new java.awt.Dimension(662, 517));
 
         Opções.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Opções.setText("Você deseja:");
 
-        painelCab.setBackground(new java.awt.Color(255, 51, 51));
+        painelCab.setBackground(new java.awt.Color(255, 102, 102));
 
         Cabeçalho.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
         Cabeçalho.setForeground(new java.awt.Color(255, 255, 255));
@@ -53,21 +56,20 @@ public class paciente extends javax.swing.JDialog {
         painelCabLayout.setHorizontalGroup(
             painelCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCabLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
+                .addGap(143, 143, 143)
                 .addComponent(Cabeçalho)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         painelCabLayout.setVerticalGroup(
             painelCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCabLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(Cabeçalho)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         solAgend.setBackground(new java.awt.Color(255, 51, 51));
         solAgend.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        solAgend.setForeground(new java.awt.Color(255, 255, 255));
         solAgend.setText("Solicitar agendamento de consulta");
         solAgend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,12 +79,10 @@ public class paciente extends javax.swing.JDialog {
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Visualizar consultas agendadas");
 
         jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Visualizar resutado de uma consulta");
 
         javax.swing.GroupLayout PainelLayout = new javax.swing.GroupLayout(Painel);
@@ -93,7 +93,7 @@ public class paciente extends javax.swing.JDialog {
                 .addComponent(painelCab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(PainelLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
+                .addGap(170, 170, 170)
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Opções)
                     .addGroup(PainelLayout.createSequentialGroup()
@@ -108,7 +108,7 @@ public class paciente extends javax.swing.JDialog {
             PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelLayout.createSequentialGroup()
                 .addComponent(painelCab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(70, 70, 70)
                 .addComponent(Opções)
                 .addGap(18, 18, 18)
                 .addComponent(solAgend)
@@ -116,21 +116,22 @@ public class paciente extends javax.swing.JDialog {
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.PREFERRED_SIZE, 794, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void solAgendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solAgendActionPerformed

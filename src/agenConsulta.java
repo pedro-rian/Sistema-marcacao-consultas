@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,9 +14,11 @@
  */
 public class agenConsulta extends javax.swing.JDialog {
 
-    /**
-     * Creates new form agenConsulta
-     */
+    public static String esp;
+    public static String tur;
+    public static String dia;
+    public static String cpf_paciente;
+    
     public agenConsulta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -29,40 +34,52 @@ public class agenConsulta extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        opDia = new javax.swing.JComboBox();
+        selecionarDia = new javax.swing.JComboBox();
         Day = new javax.swing.JLabel();
         Turn = new javax.swing.JLabel();
-        opTurn = new javax.swing.JComboBox();
+        selecionarTurno = new javax.swing.JComboBox();
         botãoConf = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Cabeçalho = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        selecionarEspecialidade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        opDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo" }));
-        opDia.addActionListener(new java.awt.event.ActionListener() {
+        selecionarDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um dia", "Segunda-Feira - 02/12", "Terça-Feira - 03/12", "Quarta-Feira - 04/12", "Quinta-Feira - 05/12", "Sexta-Feira - 06/12" }));
+        selecionarDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opDiaActionPerformed(evt);
+                selecionarDiaActionPerformed(evt);
             }
         });
 
         Day.setBackground(new java.awt.Color(0, 0, 0));
         Day.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        Day.setText("O dia de Preferência para consulta:");
+        Day.setText("O dia de preferência para consulta:");
 
         Turn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        Turn.setText("O turno de Preferência para consulta:");
+        Turn.setText("O turno de preferência para consulta:");
 
-        opTurn.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Noturno" }));
+        selecionarTurno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um turno", "Matutino", "Vespertino" }));
+        selecionarTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selecionarTurnoActionPerformed(evt);
+            }
+        });
 
         botãoConf.setBackground(new java.awt.Color(255, 0, 0));
         botãoConf.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         botãoConf.setForeground(new java.awt.Color(255, 255, 255));
         botãoConf.setText("Confirmar");
+        botãoConf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoConfActionPerformed(evt);
+            }
+        });
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
 
         Cabeçalho.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         Cabeçalho.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,6 +102,11 @@ public class agenConsulta extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel1.setText("A especialidade médica desejada:");
+
+        selecionarEspecialidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione uma especialidade", "Cardiologia", "Clínica Médica", "Dermatologia", "Ginecologia", "Neurologia", "Oftalmologia", "Ortopedia", "Pediatria", "Psiquiatria", "Urologia" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,19 +115,24 @@ public class agenConsulta extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botãoConf)
+                        .addGap(252, 252, 252))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(opDia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(selecionarDia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Day))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Turn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(opTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botãoConf)
-                        .addGap(228, 228, 228)))
-                .addGap(24, 24, 24))
+                            .addComponent(selecionarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(selecionarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,9 +144,13 @@ public class agenConsulta extends javax.swing.JDialog {
                     .addComponent(Turn))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(opDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(opTurn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                    .addComponent(selecionarDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selecionarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selecionarEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(botãoConf)
                 .addGap(58, 58, 58))
         );
@@ -136,11 +167,28 @@ public class agenConsulta extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void opDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opDiaActionPerformed
+    private void selecionarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarDiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opDiaActionPerformed
+    }//GEN-LAST:event_selecionarDiaActionPerformed
+
+    private void selecionarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarTurnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selecionarTurnoActionPerformed
+
+    private void botãoConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoConfActionPerformed
+        esp = selecionarEspecialidade.getSelectedItem().toString();
+        tur = selecionarTurno.getSelectedItem().toString();
+        dia = selecionarDia.getSelectedItem().toString();
+        cpf_paciente = TelaLogin.cpf;
+                
+        JOptionPane.showMessageDialog(rootPane, "Consulta solicitada com sucesso!");
+        selecionarDia.setSelectedItem("Selecione um dia");
+        selecionarTurno.setSelectedItem("Selecione um turno");
+        selecionarEspecialidade.setSelectedItem("Selecione uma especialidade");
+    }//GEN-LAST:event_botãoConfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,9 +237,11 @@ public class agenConsulta extends javax.swing.JDialog {
     private javax.swing.JLabel Day;
     private javax.swing.JLabel Turn;
     private javax.swing.JButton botãoConf;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JComboBox opDia;
-    private javax.swing.JComboBox opTurn;
+    private javax.swing.JComboBox selecionarDia;
+    private javax.swing.JComboBox selecionarEspecialidade;
+    private javax.swing.JComboBox selecionarTurno;
     // End of variables declaration//GEN-END:variables
 }
