@@ -17,7 +17,6 @@ public class agenConsulta extends javax.swing.JDialog {
     public static String esp;
     public static String tur;
     public static String dia;
-    public static String cpf_paciente;
     
     public agenConsulta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -179,10 +178,9 @@ public class agenConsulta extends javax.swing.JDialog {
     }//GEN-LAST:event_selecionarTurnoActionPerformed
 
     private void botãoConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoConfActionPerformed
-        esp = selecionarEspecialidade.getSelectedItem().toString();
-        tur = selecionarTurno.getSelectedItem().toString();
-        dia = selecionarDia.getSelectedItem().toString();
-        cpf_paciente = TelaLogin.cpf;
+        TelaLogin.esp.add(selecionarEspecialidade.getSelectedItem().toString());
+        TelaLogin.tur.add(selecionarTurno.getSelectedItem().toString());
+        TelaLogin.dia.add(selecionarDia.getSelectedItem().toString());
                 
         JOptionPane.showMessageDialog(rootPane, "Consulta solicitada com sucesso!");
         selecionarDia.setSelectedItem("Selecione um dia");

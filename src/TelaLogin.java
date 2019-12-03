@@ -25,13 +25,21 @@ public class TelaLogin extends javax.swing.JFrame {
     public static ArrayList<String> senhaMedico;
     public static ArrayList<String> especialidadeMedico;
     
-    public static String cpf;
+    public static ArrayList<String> cpf;
+    public static ArrayList<String> esp;
+    public static ArrayList<String> tur;
+    public static ArrayList<String> dia;
 
     public TelaLogin() {
         initComponents();
         campoUsuarioCPF.setVisible(false);
         textoCPF.setVisible(false);
-
+        
+        cpf = new ArrayList<>();
+        esp = new ArrayList<>();
+        tur = new ArrayList<>();
+        dia = new ArrayList<>(); 
+        
         CPFs = new ArrayList<>();
         senhaPaciente = new ArrayList<>();
         nomePaciente = new ArrayList<>();
@@ -325,7 +333,11 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
-
+        
+        if(entrarComo.getSelectedItem().toString().equals("Paciente") && CPFs.contains(campoUsuarioCPF.getText())==true){
+            cpf.add(campoUsuarioCPF.getText());
+        }
+        
         int x = 0;
         String s = new String(campoSenha.getPassword());
         if (entrarComo.getSelectedItem().equals("Administrador")) {
@@ -366,7 +378,7 @@ public class TelaLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Login ou senha incorretos!");
         }
         
-        cpf = campoUsuarioCPF.getText();
+        
 
     }//GEN-LAST:event_botaoEntrarActionPerformed
 

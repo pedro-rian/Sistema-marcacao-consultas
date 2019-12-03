@@ -1,3 +1,6 @@
+
+import javax.swing.JTabbedPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,18 +13,16 @@
  */
 public class solicitacoes extends javax.swing.JDialog {
 
-    /**
-     * Creates new form solicitacoes
-     */
+    ModeloDeTabela table = new ModeloDeTabela();
+    
     public solicitacoes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
-       
+        tabela.setModel(table);
+        
     }
-    
-   
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -31,6 +32,7 @@ public class solicitacoes extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
+        atualizartabela = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -83,6 +85,13 @@ public class solicitacoes extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tabela);
 
+        atualizartabela.setText("ATUALIZAR DADOS DA TABELA");
+        atualizartabela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizartabelaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -92,14 +101,20 @@ public class solicitacoes extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(atualizartabela, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(atualizartabela)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,6 +133,15 @@ public class solicitacoes extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void atualizartabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizartabelaActionPerformed
+
+        
+        table.addRow(admin.d);
+        
+        
+        
+    }//GEN-LAST:event_atualizartabelaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +186,7 @@ public class solicitacoes extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atualizartabela;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

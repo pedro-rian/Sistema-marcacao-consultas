@@ -10,9 +10,8 @@
  */
 public class admin extends javax.swing.JDialog {
 
-    /**
-     * Creates new form admin
-     */
+    public static dadosDaTabela d = new dadosDaTabela();
+    
     public admin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -330,6 +329,16 @@ public class admin extends javax.swing.JDialog {
         */
         solicitacoes s = new solicitacoes(null, false);
         s.setVisible(true);
+        
+        for (int i = 0; i < TelaLogin.cpf.size(); i++) {
+        
+        d.setCPF(TelaLogin.cpf.get(i));
+        d.setEspec(TelaLogin.esp.get(i));
+        d.setDia(TelaLogin.dia.get(i));
+        d.setTurno(TelaLogin.tur.get(i));
+        
+        }
+        
     }//GEN-LAST:event_solicitacoesMarcacaoActionPerformed
 
     private void disponibilidadeMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disponibilidadeMedicaActionPerformed
