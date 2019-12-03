@@ -16,8 +16,7 @@ public class medicosDisponiveis extends javax.swing.JDialog {
     public medicosDisponiveis(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        escolhaDia.setVisible(false);
-        escolhaEspecialidade.setVisible(false);
+        
     }
 
     /**
@@ -36,8 +35,6 @@ public class medicosDisponiveis extends javax.swing.JDialog {
         filtroDisponibilidade = new javax.swing.JComboBox();
         textoEscolha = new javax.swing.JLabel();
         campoUsuario = new javax.swing.JTextField();
-        escolhaDia = new javax.swing.JComboBox();
-        escolhaEspecialidade = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -79,10 +76,6 @@ public class medicosDisponiveis extends javax.swing.JDialog {
         textoEscolha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textoEscolha.setText("DIGITE O NOME DE USUÁRIO DO MÉDICO: ");
 
-        escolhaDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        escolhaEspecialidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cardiologia", "Clínica Médica", "Dermatologia", "Ginecologia", "Neurologia", "Oftalmologia", "Ortopedia", "Pediatria", "Psiquiatria", "Urologia" }));
-
         jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton1.setText("PROSSEGUIR");
@@ -97,45 +90,36 @@ public class medicosDisponiveis extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(filtroDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(textoEscolha))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(escolhaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(escolhaEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 42, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(filtroDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(filtroDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(textoEscolha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(escolhaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(escolhaEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(filtroDisponibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(textoEscolha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -158,18 +142,15 @@ public class medicosDisponiveis extends javax.swing.JDialog {
         if (filtroDisponibilidade.getSelectedItem().toString() == "Médico") {
             textoEscolha.setText("DIGITE O NOME DE USUÁRIO DO MÉDICO: ");
             campoUsuario.setVisible(true);
-            escolhaDia.setVisible(false);
-            escolhaEspecialidade.setVisible(false);
+            
         } else if (filtroDisponibilidade.getSelectedItem().toString() == "Especialidade") {
             textoEscolha.setText("SELECIONE A ESPECIALIDADE DESEJADA:");
             campoUsuario.setVisible(false);
-            escolhaDia.setVisible(false);
-            escolhaEspecialidade.setVisible(true);
+            
         } else if (filtroDisponibilidade.getSelectedItem().toString() == "Dia") {
             textoEscolha.setText("SELECIONE O DIA DESEJADO:");
             campoUsuario.setVisible(false);
-            escolhaDia.setVisible(true);
-            escolhaEspecialidade.setVisible(false);
+            
         }
     }//GEN-LAST:event_filtroDisponibilidadeActionPerformed
 
@@ -217,8 +198,6 @@ public class medicosDisponiveis extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campoUsuario;
-    private javax.swing.JComboBox escolhaDia;
-    private javax.swing.JComboBox escolhaEspecialidade;
     private javax.swing.JComboBox filtroDisponibilidade;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

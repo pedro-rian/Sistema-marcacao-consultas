@@ -10,9 +10,9 @@
  */
 public class cadastroAgenda extends javax.swing.JDialog {
 
-    /**
-     * Creates new form cadastroAgenda
-     */
+    public static String dias;
+    public static String turno;
+    
     public cadastroAgenda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -37,13 +37,13 @@ public class cadastroAgenda extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        seg = new javax.swing.JCheckBox();
+        ter = new javax.swing.JCheckBox();
+        qui = new javax.swing.JCheckBox();
+        qua = new javax.swing.JCheckBox();
+        sex = new javax.swing.JCheckBox();
+        selecionarTurno = new javax.swing.JComboBox();
+        salvarAgenda = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -88,23 +88,23 @@ public class cadastroAgenda extends javax.swing.JDialog {
 
         jLabel5.setText("DIA(S) DA SEMANA:");
 
-        jCheckBox3.setText("Segunda-feira");
+        seg.setText("Segunda-feira");
 
-        jCheckBox4.setText("Terça-feira");
+        ter.setText("Terça-feira");
 
-        jCheckBox5.setText("Quinta-feira");
+        qui.setText("Quinta-feira");
 
-        jCheckBox6.setText("Quarta-feira");
+        qua.setText("Quarta-feira");
 
-        jCheckBox7.setText("Sexta-feira");
+        sex.setText("Sexta-feira");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino" }));
+        selecionarTurno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino" }));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("SALVAR AGENDA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        salvarAgenda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        salvarAgenda.setText("SALVAR AGENDA");
+        salvarAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                salvarAgendaActionPerformed(evt);
             }
         });
 
@@ -119,22 +119,22 @@ public class cadastroAgenda extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selecionarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox3)
-                                    .addComponent(jCheckBox4)
+                                    .addComponent(seg)
+                                    .addComponent(ter)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5))
                                 .addGap(38, 38, 38)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jCheckBox6)
+                                        .addComponent(qua)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                        .addComponent(jCheckBox7))
+                                        .addComponent(sex))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jCheckBox5)
+                                        .addComponent(qui)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -143,7 +143,7 @@ public class cadastroAgenda extends javax.swing.JDialog {
                         .addGap(62, 62, 62))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(salvarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -157,21 +157,21 @@ public class cadastroAgenda extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox3)
+                        .addComponent(seg)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox4)
+                        .addComponent(ter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox7))
+                            .addComponent(qua)
+                            .addComponent(sex))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox5)))
+                        .addComponent(qui)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selecionarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
+                .addComponent(salvarAgenda)
                 .addContainerGap())
         );
 
@@ -190,9 +190,21 @@ public class cadastroAgenda extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void salvarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarAgendaActionPerformed
+        if(seg.isSelected() == true){
+            dias += seg.getText() + " ";
+        } if(ter.isSelected() == true){
+            dias += ter.getText() + " ";
+        } if(qua.isSelected() == true){
+            dias += qua.getText() + " ";
+        } if(qui.isSelected() == true){
+            dias += qui.getText() + " ";
+        } if(sex.isSelected() == true){
+            dias += sex.getText() + " ";
+        }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        turno = selecionarTurno.getSelectedItem().toString();
+    }//GEN-LAST:event_salvarAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,15 +249,8 @@ public class cadastroAgenda extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -254,5 +259,12 @@ public class cadastroAgenda extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JCheckBox qua;
+    private javax.swing.JCheckBox qui;
+    private javax.swing.JButton salvarAgenda;
+    private javax.swing.JCheckBox seg;
+    private javax.swing.JComboBox selecionarTurno;
+    private javax.swing.JCheckBox sex;
+    private javax.swing.JCheckBox ter;
     // End of variables declaration//GEN-END:variables
 }

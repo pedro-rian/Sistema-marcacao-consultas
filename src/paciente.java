@@ -68,8 +68,8 @@ public class paciente extends javax.swing.JDialog {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        solAgend.setBackground(new java.awt.Color(255, 51, 51));
-        solAgend.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        solAgend.setBackground(new java.awt.Color(255, 102, 102));
+        solAgend.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         solAgend.setText("Solicitar agendamento de consulta");
         solAgend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,12 +77,12 @@ public class paciente extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
-        jButton2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 102, 102));
+        jButton2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButton2.setText("Visualizar consultas agendadas");
 
-        jButton3.setBackground(new java.awt.Color(255, 51, 51));
-        jButton3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(255, 102, 102));
+        jButton3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButton3.setText("Visualizar resutado de uma consulta");
 
         javax.swing.GroupLayout PainelLayout = new javax.swing.GroupLayout(Painel);
