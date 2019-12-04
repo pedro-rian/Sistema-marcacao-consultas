@@ -197,12 +197,12 @@ public class Identificacao extends javax.swing.JDialog {
         especialidadeEscolhida = selecionarEspeci.getSelectedItem().toString();
         
         
-        if (TelaLogin.CPFs.contains(cpfPaciente) == true && TelaLogin.nomeMedico.contains(selecionarEspeci.getSelectedItem()) == true) {
+        if (TelaLogin.CPFs.contains(cpfPaciente) == true && TelaLogin.especialidadeMedico.contains(selecionarEspeci.getSelectedItem()) == true) {
             selecionarMedico m = new selecionarMedico(null, false);
             m.setVisible(true);
         } else if (TelaLogin.CPFs.contains(cpfPaciente) == false){
             JOptionPane.showMessageDialog(rootPane, "O CPF digitado não está cadastrado!");
-        } else if (TelaLogin.nomeMedico.contains(selecionarEspeci.getSelectedItem()) == false) {
+        } else if (TelaLogin.especialidadeMedico.contains(selecionarEspeci.getSelectedItem()) == false) {
             JOptionPane.showMessageDialog(rootPane, "Não existe médico cadastrado nesta especialidade!");
         }
         

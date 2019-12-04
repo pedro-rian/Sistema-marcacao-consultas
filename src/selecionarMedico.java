@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -37,6 +40,7 @@ public class selecionarMedico extends javax.swing.JDialog {
         salvarMarcacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -96,10 +100,15 @@ public class selecionarMedico extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarMarcacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarMarcacaoActionPerformed
-        
+        if (selecMedico.getSelectedItem().equals("Selecionar médico")) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor, selecione um médico!");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Consulta marcada com sucesso!");
+        }
     }//GEN-LAST:event_salvarMarcacaoActionPerformed
 
     private void selecMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecMedicoActionPerformed
